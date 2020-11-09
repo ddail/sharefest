@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from allpages import views
 
 urlpatterns = [
+    path('', views.home_view, name='allpages-home'),
+    path('map/', views.map_view, name='allpages-mappage'),
     path('admin/', admin.site.urls),
 ]
+
+
