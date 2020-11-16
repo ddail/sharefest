@@ -12,3 +12,9 @@ def connect_view(request):
 
 def map_view(request):
     return render(request, 'allpages/mappage.html')
+    
+def donate_view(request):
+    return render(request, 'allpages/donate.html')
+
+def volunteer_view(request):
+    return render(request, 'allpages/volunteer.html')

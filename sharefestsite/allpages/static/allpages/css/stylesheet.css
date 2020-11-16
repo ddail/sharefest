@@ -6,9 +6,46 @@ h1, h2{
     font-size: 48px;
     margin: lrem 0 0 0;
 }
-body {
+body{
     font-family: 'Poppins', Sans-Serif;
     font-size: 14px;
     margin: 0;
     background-color: lightgreen;
 }
+
+header{
+    top: 0;
+    left: 0;
+    height: 60px;
+    line-height: 60px;
+    background-color: black;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60px;
+    line-height: 60px;
+    z-index: 32000;
+    text-align: center;
+    background-color: black;
+}
+
+nav a{
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    font-size: 17px;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }

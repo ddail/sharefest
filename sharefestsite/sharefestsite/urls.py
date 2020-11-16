@@ -19,7 +19,11 @@ from allpages import views
 
 urlpatterns = [
     path('', views.home_view, name='allpages-home'),
+    path('about/', views.about_view, name='allpages-about'),
     path('map/', views.map_view, name='allpages-mappage'),
+    path('connect/', views.connect_view, name='allpages-connect'),
+    path('donate/', views.donate_view, name='allpages-donate'),
+    path('volunteer/', views.volunteer_view, name='allpages-volunteer'),
     path('admin/', admin.site.urls),
 ]
 
