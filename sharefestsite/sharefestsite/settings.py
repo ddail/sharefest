@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#STATICFILES DIRS = []
+
 # Application definition
 
 INSTALLED_APPS = [

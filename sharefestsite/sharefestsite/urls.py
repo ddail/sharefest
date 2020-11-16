@@ -24,6 +24,7 @@ urlpatterns = [
     path('connect/', views.connect_view, name='allpages-connect'),
     path('donate/', views.donate_view, name='allpages-donate'),
     path('volunteer/', views.volunteer_view, name='allpages-volunteer'),
+    path('login/', views.login_view, name='allpages-login'),
     path('admin/', admin.site.urls),
 ]
 

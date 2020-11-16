@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="{% static 'allpages/css/stylesheet.css' %}" rel="stylesheet">
-    <title>ShareFest</title>
+    <link rel="stylesheet" href="{% static 'allpages/css/stylesheet.css' %}">
+    <title>SF</title>
 </head>
 <body>
     <header>
-        <!-- Need to resize this <img src="{% static 'allpages/images/sharefest_fb.jpg' %}" alt=""> -->
         ShareFest
     </header>
     <nav>
@@ -21,6 +20,7 @@
         <a href="{% url 'allpages-connect' %}">Connect</a>
         <a href="{% url 'allpages-donate' %}">Donate/Sponser</a>
         <a href="{% url 'allpages-volunteer' %}">Volunteer</a>
+        <a href="{% url 'allpages-login' %}">Login</a>
     </nav>
     <main>
         {% block maincontent %}

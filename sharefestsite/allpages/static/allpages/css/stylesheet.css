@@ -9,10 +9,7 @@ h1, h2{
 body{
     font-family: 'Poppins', Sans-Serif;
     font-size: 14px;
-    margin: 0;
-    background-color: lightgreen;
 }
-
 header{
     top: 0;
     left: 0;
@@ -20,7 +17,6 @@ header{
     line-height: 60px;
     background-color: black;
 }
-
 nav{
     position: absolute;
     top: 0;
@@ -31,7 +27,6 @@ nav{
     text-align: center;
     background-color: black;
 }
-
 nav a{
     float: left;
     text-align: center;
@@ -39,7 +34,6 @@ nav a{
     color: white;
     font-size: 17px;
 }
-
 footer{
     position: fixed;
     left: 0;
@@ -48,4 +42,20 @@ footer{
     background-color: black;
     color: white;
     text-align: center;
+  }
+  /* Style the navigation bar */
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+  }
+  
+  /* Navbar links */
+  .navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
   }
