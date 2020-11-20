@@ -59,3 +59,26 @@ footer{
     text-decoration: none;
     font-size: 17px;
   }
+.post-container {
+    margin: 20px 20px 0 0;  
+    border: 5px solid #333;
+    float: left;
+}
+.post-thumb img {
+    display: block;
+    float: left;
+}
+.post-content {
+    display: block;
+    float: right;
+    text-align: right;
+}
+.post-title {
+    font-weight: bold;
+    font-size: 170%;
+    float: right;
+}
+.hp {
+float: left:
+margin: 0 15px 0 0;
+}
