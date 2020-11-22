@@ -18,6 +18,3 @@ def donate_view(request):
 
 def volunteer_view(request):
     return render(request, 'allpages/volunteer.html')
-
-def login_view(request):
-    return render(request, 'allpages/login.html')
