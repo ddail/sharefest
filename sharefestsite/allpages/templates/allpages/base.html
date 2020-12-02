@@ -20,9 +20,12 @@
         <a href="{% url 'allpages-connect' %}">Connect</a>
         <a href="{% url 'allpages-donate' %}">Donate/Sponser</a>
         <a href="{% url 'allpages-volunteer' %}">Volunteer</a>
+        <a href="{% url 'contact' %}">Contact</a>    
+        
         {% if user.is_authenticated %}
             <a href="{% url 'profile' %}">Profile</a>
             <a href="{% url 'logout' %}">Logout</a>
+            
         {% else %}
             <a href="{% url 'login' %}">Login</a>
             <a href="{% url 'register' %}">Register</a>
@@ -41,7 +44,7 @@
         {% endblock %}
     </main>
     <footer>
-        HI Footer!
+        Footer!
         <a href="https://www.facebook.com/ShareFestWillCounty/" class="fa fa-facebook" title="Facebook"></a>
         <a href="mailto:sheilablesiak@lewisu.edu" title="Email"></a> <!--Using Sheila's info here for now for testing purposes-->
     </footer>    

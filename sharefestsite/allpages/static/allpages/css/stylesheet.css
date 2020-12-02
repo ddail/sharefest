@@ -4,7 +4,6 @@
 h1, h2{
     font-family: 'Abril Fatface', Cursive;
     font-size: 48px;
-    margin: lrem 0 0 0;
     align-content: center;
 }
 h3{
@@ -16,25 +15,19 @@ body{
     font-family: 'Poppins', Sans-Serif;
     font-size: 14px;
     background-color: lightgreen;
-    align-content: center;
+    align-self: center;
 }
 header{
     left: 0;
-    height: 60px;
-    line-height: 60px;
     background-color: green;
     width: 100%;
     font-family: 'Abril Fatface', Cursive;
-    font-size: 48px;
-    padding: 20px;
+    font-size: 36px;
+    padding: 8px;
+    color: white;
 }
 nav{
     position: absolute;
-    overflow: hidden;
-    top: 0;
-    height: 60px;
-    line-height: 60px;
-    z-index: 32000;
     text-align: center;
     background-color: green;
     align-content: center;
@@ -43,7 +36,7 @@ nav{
 nav a{
     float: left;
     text-align: center;
-    padding: 14px 16px;
+    padding: 12px 14px;
     color: white;
     font-size: 17px;
 }
