@@ -4,7 +4,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from sharefestsite.settings import EMAIL_HOST_USER
 from allpages.forms import EmailForm
 from . import forms
-
+from .models import Users
+from django.conf import settings
+#from django.contrib.auth.models import User
 
 def home_view(request):
     return render(request, 'allpages/index.html')
@@ -13,7 +15,12 @@ def about_view(request):
     return render(request, 'allpages/about.html')
 
 def connect_view(request):
-    return(request, 'allpages/connect.html')
+    return render(request, 'allpages/connect.html')
+
+def user_info(request):
+    context = {}
+    context["dataset"] = Users.objects.all()
+    return render(request, 'allpages/user_info.html', context)
 
 def contact(request):
     #sub = forms.EmailForm()
@@ -22,12 +29,17 @@ def contact(request):
     else:
         sub = forms.EmailForm(request.POST)
         if sub.is_valid():
+            #recievers = []
+            #for user in Users.objects.all():
+            #    recievers.append(user.email)
             subj = sub.cleaned_data['subject']
             memo = sub.cleaned_data['message']
             recepient = str(sub['Emails'].value())
-            #recepient = raw(str('SELECT email FROM auth_user') )
-            #data = User.objects.get(email=recepient)
+            #user_email = User.objects.get('email')
+            #recipient_list = [user_email]
+            
             send_mail(subj, memo, EMAIL_HOST_USER, [recepient], fail_silently= False)
+            #send_mail(subj, memo, EMAIL_HOST_USER, recipient_list)
 
         return render(request, 'allpages/success.html', {'recepient': recepient})
     return render(request, 'allpages/contact.html', {'form': sub})

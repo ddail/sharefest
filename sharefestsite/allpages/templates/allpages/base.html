@@ -25,7 +25,9 @@
         {% if user.is_authenticated %}
             <a href="{% url 'profile' %}">Profile</a>
             <a href="{% url 'logout' %}">Logout</a>
-            
+            {% if user.is_superuser %}
+                <a href="{% url 'user_info' %}">User Info</a>
+            {% endif %}
         {% else %}
             <a href="{% url 'login' %}">Login</a>
             <a href="{% url 'register' %}">Register</a>
@@ -44,9 +46,8 @@
         {% endblock %}
     </main>
     <footer>
-        Footer!
-        <a href="https://www.facebook.com/ShareFestWillCounty/" class="fa fa-facebook" title="Facebook"></a>
-        <a href="mailto:sheilablesiak@lewisu.edu" title="Email"></a> <!--Using Sheila's info here for now for testing purposes-->
+        <a href="https://www.facebook.com/ShareFestWillCounty/" class="fa fa-facebook" title="Facebook">Facebook</a>
+        <a href="mailto:sheilablesiak@lewisu.edu" title="Email">Email</a> <!--Using Sheila's info here for now for testing purposes-->
     </footer>    
 </body>
 </html>

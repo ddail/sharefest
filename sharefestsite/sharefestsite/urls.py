@@ -18,12 +18,14 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from allpages import views
 from users import views as user_views
+from django.conf import settings
 
 urlpatterns = [
     path('', views.home_view, name='allpages-home'),
     path('about/', views.about_view, name='allpages-about'),
     path('map/', views.map_view, name='allpages-mappage'),
     path('connect/', views.connect_view, name='allpages-connect'),
+    path('user_info/', views.user_info, name='user_info'),
     path('donate/', views.donate_view, name='allpages-donate'),
     path('volunteer/', views.volunteer_view, name='allpages-volunteer'),
     path('profile/', user_views.profile, name='profile'),
