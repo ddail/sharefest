@@ -1,3 +1,8 @@
 from django.db import models
+from multi_email_field.fields import MultiEmailField
 
-# Create your models here.
+class ContactModel(models.Model):
+    emails = MultiEmailField()
+
+#class Person(models.Model):
+#first_name = models.CharField(max_length=30)

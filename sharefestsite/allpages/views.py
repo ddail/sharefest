@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from sharefestsite.settings import EMAIL_HOST_USER
 from allpages.forms import EmailForm
 from . import forms
+
 
 def home_view(request):
     return render(request, 'allpages/index.html')
@@ -24,6 +25,8 @@ def contact(request):
             subj = sub.cleaned_data['subject']
             memo = sub.cleaned_data['message']
             recepient = str(sub['Emails'].value())
+            #recepient = raw(str('SELECT email FROM auth_user') )
+            #data = User.objects.get(email=recepient)
             send_mail(subj, memo, EMAIL_HOST_USER, [recepient], fail_silently= False)
 
         return render(request, 'allpages/success.html', {'recepient': recepient})
