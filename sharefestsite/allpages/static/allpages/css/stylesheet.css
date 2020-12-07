@@ -60,21 +60,21 @@ footer{
 .post-container{
     margin: 20px 20px 0 0;  
     border: 5px solid #333;
-    float: left;
+    float: center;
 }
 .post-thumb img{
     display: block;
-    float: left;
+    float: center;
 }
 .post-content{
     display: block;
-    float: right;
-    text-align: right;
+    float: center;
+    text-align: center;
 }
 .post-title{
     font-weight: bold;
     font-size: 170%;
-    float: right;
+    float: center;
 }
 .hp{
     float: left;

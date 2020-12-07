@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'allpages.apps.AllpagesConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'multi_email_field',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
