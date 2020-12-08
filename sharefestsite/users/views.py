@@ -24,15 +24,15 @@ def register(request):
 def profile(request):
 	if request.method == 'POST':
 		form = EditProfileForm(request.POST, instance=request.user)
-		#profile_form = ProfileForm(request.POST, instance=request.userprofile)
-		profile_form = ProfileForm(request.POST)
+		profile_form = ProfileForm(request.POST, instance=request.user)
+		#profile_form = ProfileForm(request.POST)
 		if form.is_valid() and profile_form.is_valid():
 			user_form = form.save()
-			#custom_form = profile_form.save(False)
-			#custom_form.user = user_form
-			#custom_form.save()
+			custom_form = profile_form.save()
+			custom_form.user = user_form
+			custom_form.save()
 			messages.success(request, 'Profile details updated.')
-			return redirect('login')
+			return redirect('profile')
 	else:
 		form = EditProfileForm(instance=request.user)
 		#profile_form = ProfileForm(instance=request.user.userprofile)

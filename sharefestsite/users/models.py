@@ -7,12 +7,11 @@ class UserProfileManager(models.Manager):
     pass
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    userI = models.OneToOneField(User, on_delete=models.CASCADE)
     city = models.CharField(max_length=100, default='')
     username = models.CharField(max_length=30)
     email = models.EmailField(default="")
     phone_num = models.IntegerField(default=0)
-    #current_pw = models.CharField(max_length=20)
     
     def __str__(self):
         return self.username

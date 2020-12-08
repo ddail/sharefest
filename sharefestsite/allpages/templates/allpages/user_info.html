@@ -2,10 +2,8 @@
 {% block maincontent %}
         <h1>All User Info</h1>
         {% for data in dataset %}
-
-        {{ data.Email }}<br/>
-        {{ data.Phone }}<br/>
-        <hr/>
+                {{ data }}<br/>
+                <hr/>
         {% endfor %}
         
 {% endblock maincontent %}

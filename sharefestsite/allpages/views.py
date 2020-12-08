@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail, send_mass_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from sharefestsite.settings import EMAIL_HOST_USER
 from allpages.forms import EmailForm
 from . import forms
-from .models import Users
+from .models import AllUser
 from django.conf import settings
-#from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 def home_view(request):
     return render(request, 'allpages/index.html')
@@ -19,7 +19,9 @@ def connect_view(request):
 
 def user_info(request):
     context = {}
-    context["dataset"] = Users.objects.all()
+    #context["dataset"] = AllUsers.objects.all()
+    user = get_user_model()
+    context["dataset"] = user.objects.values_list('email')
     return render(request, 'allpages/user_info.html', context)
 
 def contact(request):
@@ -29,19 +31,20 @@ def contact(request):
     else:
         sub = forms.EmailForm(request.POST)
         if sub.is_valid():
-            #recievers = []
-            #for user in Users.objects.all():
-            #    recievers.append(user.email)
+            receivers = []
+            user = get_user_model()
+            userList = user.objects.values_list('email')
+            for user in userList:
+                string = str(user)
+                oldstr = string.replace('(','').replace(')','')
+                newstr = oldstr.replace("'",'').replace(',','')
+                receivers.append(newstr)
             subj = sub.cleaned_data['subject']
             memo = sub.cleaned_data['message']
-            recepient = str(sub['Emails'].value())
-            #user_email = User.objects.get('email')
-            #recipient_list = [user_email]
-            
-            send_mail(subj, memo, EMAIL_HOST_USER, [recepient], fail_silently= False)
-            #send_mail(subj, memo, EMAIL_HOST_USER, recipient_list)
-
-        return render(request, 'allpages/success.html', {'recepient': recepient})
+            #recepient = str(sub['Emails'].value())
+            #send_mail(subj, memo, EMAIL_HOST_USER, [recepient], fail_silently= False)
+            send_mail(subj, memo, EMAIL_HOST_USER, receivers, fail_silently= False)
+        return render(request, 'allpages/success.html', {'recepient': receivers})
     return render(request, 'allpages/contact.html', {'form': sub})
 
 #def thanks(request):
