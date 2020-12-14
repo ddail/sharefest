@@ -12,18 +12,21 @@ h3{
     font-size: 24px;
 }
 body{
+    background-color: #DCCC65;
+}
+main{
     font-family: 'Poppins', Sans-Serif;
     font-size: 14px;
-    background-color: lightgreen;
-    align-self: center;
+    background-color: #DCCC65;
+    align-items: center;
 }
 header{
-    left: 0;
+    top: 0;
     background-color: green;
     width: 100%;
     font-family: 'Abril Fatface', Cursive;
     font-size: 36px;
-    padding: 8px;
+    padding: 6px;
     color: white;
 }
 nav{
@@ -31,7 +34,9 @@ nav{
     text-align: center;
     background-color: green;
     align-content: center;
+    font-family: 'Abril Fatface', Cursive;
     width: 100%;
+    padding: 8px;
 }
 nav a{
     float: left;
@@ -45,17 +50,16 @@ nav a:hover{
     color: black;
 }
 main{
-    align-content: center;
+    align-items: center;
 }
 footer{
-    position: fixed;
-    left: 0;
     bottom: 0;
+    position: fixed;
     width: 100%;
     background-color: green;
-    padding: 10px;
     color: white;
     text-align: center;
+    padding: 10px;
   }
 .post-container{
     margin: 20px 20px 0 0;  
@@ -65,6 +69,7 @@ footer{
 .post-thumb img{
     display: block;
     float: center;
+    align-content: center;
 }
 .post-content{
     display: block;
