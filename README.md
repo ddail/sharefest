@@ -7,13 +7,13 @@
     
     
 <h2>Create a new vritual environment in the current directory</h2>
-    py -m venv <env name> 
+    py -m venv [env name]
 
 <h2>Navigate to the directory where the env was created and execute this command</h2>
     <env name>\Scripts\activate.bat
     
 <h2>You should see the following at the left of the temrinal</h2>
-    (<env name>)C:\\
+    ([env name])C:\\
     
     
 <h2>Now, navigate to the cloned github repository 'sharefestsite' folder</h2>
