@@ -14,14 +14,14 @@ def home_view(request):
 def about_view(request):
     return render(request, 'allpages/about.html')
 
-def connect_view(request):
-    return render(request, 'allpages/connect.html')
+#def connect_view(request):
+#    return render(request, 'allpages/connect.html')
 
 def user_info(request):
     context = {}
-    #context["dataset"] = AllUsers.objects.all()
+    #ontext["dataset"] = AllUsers.objects.all()
     user = get_user_model()
-    context["dataset"] = user.objects.values_list('email')
+    context["dataset"] = user.objects.values_list('username', 'email')
     return render(request, 'allpages/user_info.html', context)
 
 def contact(request):

@@ -8,19 +8,6 @@ class ContactModel(models.Model):
 
 class AllUser(models.Model):
     title = models.CharField(verbose_name='title',max_length=30,null=True,blank=True)
-    emailList = []
-    user = get_user_model()
-    userList = user.objects.values_list('email')
-    for i in userList:
-        string = str(i)
-        oldstr = string.replace('(','').replace(')','')
-        newstr = oldstr.replace("'",'').replace(',',';')
-        print(newstr)
-        emailList.append(newstr)
-    
-    print(emailList)
-            
-    #alist = User.objects.all().values_list('email')
 
     def __str__(self):
         return self.title

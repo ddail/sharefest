@@ -124,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'sharefestsite/allpages/static'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -135,7 +136,7 @@ LOGIN_URL = 'login'
 EMAIL_HOST = 'smtp.gmail.com' #depends on what Gary is using - assuming here that it is gmail
 EMAIL_PORT = 587           #gmail's port
 EMAIL_HOST_USER = 'sheila.lesiak@gmail.com'          #will be Gary's email but using sheila's right now
-EMAIL_HOST_PASSWORD = 'gckuztrvmwspledo'      #actual password for gmail or whatever email account
+EMAIL_HOST_PASSWORD = 'gckuztrvmwspledo'      
 #google - environmental variable django
 EMAIL_USE_TLS = True   #for security
 
