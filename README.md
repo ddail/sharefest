@@ -1,6 +1,6 @@
-#READ BELOW!!!
+<h1>READ BELOW!!!</h1>
 
-Open the command line and navigate to an easily accessible directory.
+<h2>Open the command line and navigate to an easily accessible directory.</h2>
 
 Install a virtual environment to run Django in
     type 'py -m pip install --user virtualenv'
